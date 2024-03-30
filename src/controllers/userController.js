@@ -60,7 +60,7 @@ const accountConfirm = async (req, res) => {
   }
 };
 
-const login = async (req, res, next) => {
+const login = async (req, res) => {
   const { email, password } = req.body;
   const usuario = await Usuarios.findOne({ where: { email } });
 
@@ -103,7 +103,7 @@ const getUserProfile = async (req, res) => {
   });
 };
 
-const updateProfile = async (req, res, next) => {
+const updateProfile = async (req, res) => {
   const { password, role, ...resto } = req.body;
   const { id } = req.usuario;
   const usuario = await Usuarios.findOne({ where: { email: resto.email } });
@@ -130,7 +130,7 @@ const updateProfile = async (req, res, next) => {
   }
 };
 
-const imageProfile = async (req, res, next) => {
+const imageProfile = async (req, res) => {
   try {
     const { id } = req.usuario;
     const usuario = await Usuarios.findByPk(id);
@@ -151,7 +151,6 @@ const imageProfile = async (req, res, next) => {
         );
         fs.unlink(imagePath, (err) => {
           if (err) {
-
           }
         });
       }

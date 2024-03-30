@@ -98,7 +98,7 @@ const Usuarios = db.define(
         user.password = Usuarios.prototype.hashPassword(user.password);
       },
     },
-  }
+  },
 );
 // metodo para comparar las contraseña
 Usuarios.prototype.validPassword = function (password) {
