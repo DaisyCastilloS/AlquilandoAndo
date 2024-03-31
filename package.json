@@ -4,12 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint --ignore-path .eslintignore --ext .js,.ts .",
+    "prepare": "husky || true",
     "lint-fix": "eslint --fix --ignore-path .eslintignore --ext .js,.ts .",
     "test": "jest --watchAll --collectCoverage",
     "dev:back": "nodemon .server/index.js",
     "lint:back": "pnpm run lint -w backend",
-    "prepare": "husky install",
     "seed": "node ./seed/seed.js",
     "start": "node .server/index.js"
   },
