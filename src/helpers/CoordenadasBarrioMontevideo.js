@@ -66,7 +66,7 @@ const coordinates = [
   { latitude: -34.92155, longitude: -56.15608 }, //Punta Carretas
   { latitude: -34.885796, longitude: -56.089123 }, //Punta Gorda
   { latitude: -34.82089, longitude: -56.100277 }, //Punta Rieles
-  { latitude: --34.87832, longitude: -56.189575 }, //Reducto
+  { latitude: -34.87832, longitude: -56.189575 }, //Reducto
   { latitude: -34.790337, longitude: -56.350254 }, //Santiago Vázquez
   { latitude: -34.83642, longitude: -56.211918 }, //Sayago
   { latitude: -34.764877, longitude: -56.14771 }, //Toledo Chico
