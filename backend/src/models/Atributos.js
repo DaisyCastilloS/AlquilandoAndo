@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('./sequelize');
 
-const Propiedad = sequelize.define('Propiedad', {
+const Atributos = sequelize.define('Atributos', {
   titulo: {
     type: DataTypes.STRING,
     allowNull: false,
@@ -14,14 +14,26 @@ const Propiedad = sequelize.define('Propiedad', {
     type: DataTypes.INTEGER,
     allowNull: false,
   },
-  ubicacion: {
+  superficie_cubierta: {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  fechapublicacion: {
-    type: DataTypes.DATE,
+  baños: {
+    type: DataTypes.INTEGER,
     allowNull: false,
   },
+  ambientes: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+  },
+  superficie_total: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+  },
+  ubicacion: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  }
 });
 
-module.exports = Propiedad;
+module.exports = Atributos;
