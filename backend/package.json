@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "sync-db": "node .src/scripts/createTables.js",
     "lint": "eslint --ignore-path .eslintignore --ext .js,.ts .",
     "lint-fix": "eslint --fix --ignore-path .eslintignore --ext .js,.ts .",
     "test": "jest --watchAll --collectCoverage",
@@ -35,6 +36,8 @@
     "@types/supertest": "^6.0.2",
     "eslint": "^8.57.0",
     "eslint-config-airbnb-base": "^15.0.0",
-    "nodemon": "^3.1.0"
+    "nodemon": "^3.1.0",
+    "sequelize-cli": "^6.6.2",
+    "swagger-ui-express": "^5.0.0"
   }
 }

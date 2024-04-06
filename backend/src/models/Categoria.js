@@ -1,15 +1,15 @@
-const { DataTypes } = require('sequelize');
-const db = require('../dataBase/db');
+const { Sequelize } = require('sequelize');
+const db = require('../dataBase');
 
 const Categoria = db.define('Categoria', {
   id: {
-    type: DataTypes.INTEGER,
+    type: Sequelize.INTEGER,
     primaryKey: true,
     allowNull: false,
     autoIncrement: true,
   },
   name: {
-    type: DataTypes.STRING,
+    type: Sequelize.STRING,
     allowNull: false,
   },
 });

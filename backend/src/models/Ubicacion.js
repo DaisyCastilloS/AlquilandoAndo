@@ -1,33 +1,33 @@
 // models/Ubicacion.js
 
-const { DataTypes } = require('sequelize');
-const db = require('../dataBase/db');
+const { Sequelize } = require('sequelize');
+const db = require('../dataBase');
 
 const Ubicacion = db.define('Ubicacion', {
   address_line: {
-    type: DataTypes.STRING,
+    type: Sequelize.STRING,
   },
   neighborhood: {
-    type: DataTypes.STRING,
+    type: Sequelize.STRING,
   },
   city: {
-    type: DataTypes.STRING,
+    type: Sequelize.STRING,
     allowNull: false,
   },
   state: {
-    type: DataTypes.STRING,
+    type: Sequelize.STRING,
     allowNull: false,
   },
   country: {
-    type: DataTypes.STRING,
+    type: Sequelize.STRING,
     allowNull: false,
   },
   latitude: {
-    type: DataTypes.FLOAT,
+    type: Sequelize.FLOAT,
     allowNull: false,
   },
   longitude: {
-    type: DataTypes.FLOAT,
+    type: Sequelize.FLOAT,
     allowNull: false,
   },
 });

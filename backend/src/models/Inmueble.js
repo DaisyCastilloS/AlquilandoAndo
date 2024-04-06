@@ -1,46 +1,125 @@
-const { DataTypes } = require('sequelize');
-const db = require('../dataBase/db');
+
+const { db } = require('../dataBase');
+const Sequelize = require('sequelize');
+
 
 const Inmueble = db.define('Inmueble', {
   name: {
-    type: DataTypes.STRING,
+    type: Sequelize.STRING,
     allowNull: false,
+    validate: {
+      notNull: {
+        msg: 'El nombre es requerido'
+      },
+      notEmpty: {
+        msg: 'Debe ingresar un nombre'
+      }
+    }
   },
   link: {
-    type: DataTypes.STRING,
+    type: Sequelize.STRING,
     allowNull: false,
+    validate: {
+      isUrl: {
+        msg: 'Debe ser una URL válida'
+      }
+    }
   },
   currency: {
-    type: DataTypes.STRING,
+    type: Sequelize.STRING,
+    allowNull: false,
+    validate: {
+      isIn: {
+        args: [['USD', 'EUR', 'ARS']], // Definir las monedas permitidas
+        msg: 'Moneda no válida'
+      }
+    }
   },
   titulo: {
-    type: DataTypes.STRING,
+    type: Sequelize.STRING,
     allowNull: false,
+    validate: {
+      len: {
+        args: [5, 100], 
+        msg: 'El título debe tener entre 5 y 100 caracteres'
+      }
+    }
   },
   precio: {
-    type: DataTypes.DECIMAL,
+    type: Sequelize.DECIMAL,
     allowNull: false,
+    validate: {
+      isDecimal: {
+        msg: 'Debe ser un número decimal'
+      },
+      min: {
+        args: [0], 
+        msg: 'El precio no puede ser negativo'
+      }
+    }
   },
   dormitorios: {
-    type: DataTypes.INTEGER,
+    type: Sequelize.INTEGER,
     allowNull: false,
+    validate: {
+      isInt: {
+        msg: 'Debe ser un número entero'
+      },
+      min: {
+        args: [0],
+        msg: 'Número de dormitorios no válido'
+      }
+    }
   },
   baños: {
-    type: DataTypes.INTEGER,
+    type: Sequelize.INTEGER,
     allowNull: false,
+    validate: {
+      isInt: {
+        msg: 'Debe ser un número entero'
+      },
+      min: {
+        args: [0],
+        msg: 'Número de baños no válido'
+      }
+    }
   },
   ambientes: {
-    type: DataTypes.INTEGER,
+    type: Sequelize.INTEGER,
     allowNull: false,
+    validate: {
+      isInt: {
+        msg: 'Debe ser un número entero'
+      },
+      min: {
+        args: [0],
+        msg: 'Número de ambientes no válido'
+      }
+    }
   },
   superficie_total: {
-    type: DataTypes.INTEGER,
+    type: Sequelize.INTEGER,
     allowNull: false,
+    validate: {
+      isInt: {
+        msg: 'Debe ser un número entero'
+      },
+      min: {
+        args: [0],
+        msg: 'Superficie total no válida'
+      }
+    }
   },
   ubicacion: {
-    type: DataTypes.STRING,
+    type: Sequelize.STRING,
     allowNull: false,
-  },
+    validate: {
+      len: {
+        args: [5, 255],
+        msg: 'La ubicación debe tener entre 5 y 255 caracteres'
+      }
+    }
+  }
 });
 
 module.exports = Inmueble;
