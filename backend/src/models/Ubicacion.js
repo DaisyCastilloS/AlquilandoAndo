@@ -7,9 +7,6 @@ const Ubicacion = db.define('Ubicacion', {
   address_line: {
     type: DataTypes.STRING,
   },
-  zip_code: {
-    type: DataTypes.STRING,
-  },
   neighborhood: {
     type: DataTypes.STRING,
   },
