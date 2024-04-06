@@ -1,7 +1,10 @@
-// models/index.js
+const Role = require('./Role');
 
-const Inmueble = require('./Inmueble');
+const Usuarios = require('./Usuario');
+const Categoria = require('./Categoria');
 const Ubicacion = require('./Ubicacion');
+const Inmueble = require('./Inmueble');
+
 
 // Relaciones
 
@@ -11,8 +14,10 @@ Inmueble.belongsTo(Ubicacion); //un inmueble tiene una ubicacion ok
 Categoria.hasMany(Inmueble); // Una Categoria tiene muchos Inmuebles
 Inmueble.belongsTo(Categoria); // Cada Inmueble pertenece a una Categoria
 
-
 module.exports = {
-Inmueble,
+  Usuarios,
+  Role,
+  Categoria,
+  Inmueble,
   Ubicacion,
-};
+  };

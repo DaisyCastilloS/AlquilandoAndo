@@ -1,7 +1,7 @@
 // models/Ubicacion.js
 
 const { Sequelize } = require('sequelize');
-const db = require('../dataBase');
+const {db } = require ("../dataBase/db.js");
 
 const Ubicacion = db.define('Ubicacion', {
   address_line: {

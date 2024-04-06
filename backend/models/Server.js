@@ -1,5 +1,5 @@
 const express = require("express")
-const { dbConnection } = require("../config")
+const { dbConnection } = require("../configuracion/index.js")
 const path = require("path")
 const bodyParser = require("body-parser")
 const cookieParser = require("cookie-parser")

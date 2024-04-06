@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "sync-db": "node .src/scripts/createTables.js",
+    "sequelize": "npx sequelize",
+    "sequelize:init": "npm run sequelize init",
+    "sequelize:migrate": "npm run sequelize db:migrate",
+    "sequelize:seed": "npm run sequelize db:seed:all",
+    "db:reset": "npm run sequelize db:migrate:undo:all && npm run sequelize db:migrate && npm run sequelize db:seed:all",
     "lint": "eslint --ignore-path .eslintignore --ext .js,.ts .",
     "lint-fix": "eslint --fix --ignore-path .eslintignore --ext .js,.ts .",
     "test": "jest --watchAll --collectCoverage",
