@@ -4,11 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "sequelize": "npx sequelize",
-    "sequelize:init": "npm run sequelize init",
-    "sequelize:migrate": "npm run sequelize db:migrate",
-    "sequelize:seed": "npm run sequelize db:seed:all",
-    "db:reset": "npm run sequelize db:migrate:undo:all && npm run sequelize db:migrate && npm run sequelize db:seed:all",
+    "save-clean-data": "node scripts/saveCleanData.js",
     "lint": "eslint --ignore-path .eslintignore --ext .js,.ts .",
     "lint-fix": "eslint --fix --ignore-path .eslintignore --ext .js,.ts .",
     "test": "jest --watchAll --collectCoverage",
@@ -20,6 +16,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^1.6.8",
     "bcrypt": "^5.1.1",
     "body-parser": "^1.20.2",
     "cookie-parser": "^1.4.6",
@@ -34,6 +31,7 @@
     "nodemailer": "^6.9.13",
     "pg": "^8.11.3",
     "sequelize": "^6.37.1",
+    "swagger-ui-express": "^5.0.0",
     "util": "^0.12.5"
   },
   "devDependencies": {
@@ -41,7 +39,6 @@
     "eslint": "^8.57.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "nodemon": "^3.1.0",
-    "sequelize-cli": "^6.6.2",
-    "swagger-ui-express": "^5.0.0"
+    "sequelize-cli": "^6.6.2"
   }
 }
