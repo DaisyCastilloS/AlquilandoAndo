@@ -1,6 +1,6 @@
 const { Sequelize } = require('sequelize');
 
-const {db } = require ("../dataBase/db.js");
+const { db } = require('../dataBase/db.js');
 
 const Categoria = db.define('Categoria', {
   id: {

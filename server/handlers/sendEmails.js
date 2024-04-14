@@ -2,7 +2,7 @@ const nodemailer = require('nodemailer');
 const fs = require('fs');
 const util = require('util');
 const ejs = require('ejs');
-const { emailConfig } = require('../configuracion');
+const { emailConfig } = require('../config/email');
 require('dotenv').config();
 
 const transport = nodemailer.createTransport({

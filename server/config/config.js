@@ -2,7 +2,7 @@ const { db } = require('../dataBase/db.js');
 
 const dbConnection = async () => {
   try {
-    require("../models")
+    require('../models');
     await db.authenticate();
     db.sync();
   } catch (error) {
