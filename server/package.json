@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "prepare": "husky",
     "save-clean-data": "node scripts/saveCleanData.js",
     "lint": "eslint --ignore-path .eslintignore --ext .js,.ts .",
     "lint--fix": "eslint --fix --ignore-path .eslintignore --ext .js,.ts .",
